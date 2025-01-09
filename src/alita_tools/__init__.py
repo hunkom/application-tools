@@ -8,7 +8,7 @@ from .confluence import get_tools as get_confluence
 from .gitlab import get_tools as get_gitlab
 from .gitlab_org import get_tools as get_gitlab_org
 from .zephyr import get_tools as get_zephyr
-from .browser import get_tools as get_browser
+#from .browser import get_tools as get_browser
 from .report_portal import get_tools as get_report_portal, ReportPortalToolkit
 from .bitbucket import get_tools as get_bitbucket
 from .testrail import get_tools as get_testrail, TestrailToolkit
@@ -17,7 +17,7 @@ from .xray import get_tools as get_xray_cloud
 from .sharepoint import get_tools as get_sharepoint
 from .qtest import get_tools as get_qtest, QtestToolkit
 from .zephyr_scale import get_tools as get_zephyr_scale
-from .ado import get_tools as get_ado
+# from .ado import get_tools as get_ado
 from .ado.test_plan import AzureDevOpsPlansToolkit
 from .ado.work_item import AzureDevOpsWorkItemsToolkit
 from .ado.wiki import AzureDevOpsWikiToolkit
@@ -48,8 +48,8 @@ def get_tools(tools_list, *args, **kwargs):
             tools.extend(get_gitlab_org(tool))
         elif tool['type'] == 'zephyr':
             tools.extend(get_zephyr(tool))
-        elif tool['type'] == 'browser':
-            tools.extend(get_browser(tool))
+        # elif tool['type'] == 'browser':
+        #     tools.extend(get_browser(tool))
         elif tool['type'] == 'yagmail':
             tools.extend(get_yagmail(tool))
         elif tool['type'] == 'report_portal':
@@ -58,8 +58,8 @@ def get_tools(tools_list, *args, **kwargs):
             tools.extend(get_bitbucket(tool))
         elif tool['type'] == 'testrail':
             tools.extend(get_testrail(tool))
-        elif tool['type'] == 'ado_boards' or tool['type'] == 'ado_wiki' or tool['type'] == 'ado_plans':
-            tools.extend(get_ado(tool['type'], tool))
+        # elif tool['type'] == 'ado_boards' or tool['type'] == 'ado_wiki' or tool['type'] == 'ado_plans':
+        #     tools.extend(get_ado(tool['type'], tool))
         elif tool['type'] == 'testio':
             tools.extend(get_testio(tool))
         elif tool['type'] == 'xray_cloud':
